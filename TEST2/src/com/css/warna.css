@@ -1,0 +1,31 @@
+.SATU-background{
+    -fx-background-color: #FAFAFA;
+
+
+}
+
+.DUA-background{
+    -fx-background-color: #ffffff;
+
+
+}
+
+.TIGA-background{
+    -fx-background-color: #EDF2F7;
+
+
+}
+
+.TOSCA-background{
+    -fx-background-color: #40E0D0;
+
+
+}
+
+.WARNA-TEXT{
+    /* <color> values */
+-fx-text-fill: rgb(255, 255, 255);
+
+
+
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="677.0" prefWidth="967.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.herpathway.controller.LoginController">
+   <children>
+      <Pane prefHeight="677.0" prefWidth="674.0" style="-fx-background-color: #FCFCFD;">
+         <children>
+            <GridPane layoutX="160.0" layoutY="326.0">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+            </GridPane>
+             <PasswordField fx:id="passwordField" layoutX="200.0" layoutY="277.0" prefHeight="25.0" prefWidth="301.0" promptText="Type your password" style="-fx-background-color: #EDF2F7;" />
+            <Label layoutX="195.0" layoutY="97.0" text="Login">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+             <TextField fx:id="usernameField" layoutX="199.0" layoutY="215.0" prefHeight="25.0" prefWidth="301.0" promptText="Type your username" style="-fx-background-color: #EDF2F7;" />
+             <CheckBox fx:id="showPasswordToggle" layoutX="202.0" layoutY="306.0" prefHeight="19.0" prefWidth="113.0" text="Show Password">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </CheckBox>
+             <Hyperlink layoutX="366.0" layoutY="416.0" onAction="#handleRegisterLinkAction" text="Create account" />
+             <Button layoutX="201.0" layoutY="372.0" onAction="#handleLoginButtonAction" prefHeight="25.0" prefWidth="300.0" style="-fx-background-color: #40E0D0;" text="Login" textFill="WHITE" />
+            <Label layoutX="242.0" layoutY="420.0" text="Dont have an account?" />
+            <Label layoutX="200.0" layoutY="195.0" text="Username" />
+            <Label layoutX="201.0" layoutY="257.0" text="Password" />
+             <TextField fx:id="passwordTextField" layoutX="200.0" layoutY="277.0" managed="false" prefHeight="25.0" prefWidth="301.0" promptText="Type your password" style="-fx-background-color: #EDF2F7;" visible="false" />
+         </children>
+      </Pane>
+      <ImageView fitHeight="29.0" fitWidth="187.0" layoutX="806.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/logoHitam.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="296.0" fitWidth="181.0" layoutX="645.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/Young%20woman%20writing%20on%20the%20whiteboard.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

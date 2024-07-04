@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.MentorshipQuestionController"
+      alignment="CENTER" spacing="10">
+      
+    <Label text="Mentorship Questionnaire" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    
+    <Label text="1. How satisfied are you with the mentorship program?" />
+    <RadioButton text="Very satisfied" />
+    <RadioButton text="Satisfied" />
+    <RadioButton text="Neutral" />
+    <RadioButton text="Dissatisfied" />
+    <RadioButton text="Very dissatisfied" />
+    
+    <Label text="2. What aspects of the program do you find most beneficial?" />
+    <CheckBox text="Networking opportunities" />
+    <CheckBox text="Learning new skills" />
+    <CheckBox text="Career advice" />
+    <CheckBox text="Personal development" />
+    
+    <Label text="3. Suggestions for improvement:" />
+    <TextArea prefWidth="300" prefHeight="100" />
+    
+    <Button text="Submit" onAction="#handleSubmitButtonAction" />
+    
+</VBox>
