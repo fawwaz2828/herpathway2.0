@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Start a new forum discussion. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ForumComposeController"
+      styleClass="page">
+
+    <HBox>
+        <Button styleClass="btn-ghost" text="&#8592;  All discussions" onAction="#handleCancel"/>
+    </HBox>
+
+    <VBox spacing="4">
+        <Label styleClass="page-title" text="New discussion"/>
+        <Label styleClass="page-subtitle" text="A clear title and enough context help others give you a useful answer."/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="16" maxWidth="860">
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Category"/>
+            <ComboBox fx:id="categoryBox" promptText="Choose a category" prefWidth="260"/>
+        </VBox>
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Title"/>
+            <TextField fx:id="titleField" promptText="e.g. How do I prepare for my first data science internship?"/>
+        </VBox>
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Details"/>
+            <TextArea fx:id="bodyArea" wrapText="true" prefRowCount="9"
+                      promptText="What are you trying to do, what have you tried, and where are you stuck?"/>
+        </VBox>
+        <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Cancel" onAction="#handleCancel"/>
+            <Button styleClass="btn-primary" text="Publish discussion" onAction="#handlePublish"/>
+        </HBox>
+    </VBox>
+</VBox>

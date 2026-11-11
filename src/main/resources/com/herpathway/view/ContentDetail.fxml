@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- One learning item: an article to read here, or a link to a video / e-book. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ContentDetailController"
+      styleClass="page">
+
+    <HBox>
+        <Button styleClass="btn-ghost" text="&#8592;  Learning" onAction="#handleBack"/>
+    </HBox>
+
+    <VBox styleClass="card, reading-card" spacing="14" maxWidth="820">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="typeBadge" styleClass="badge"/>
+            <Label fx:id="metaLabel" styleClass="muted, small"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="deleteButton" styleClass="btn-danger" text="Delete" onAction="#handleDelete"/>
+        </HBox>
+        <Label fx:id="titleLabel" styleClass="hero-title" wrapText="true"/>
+        <Label fx:id="summaryLabel" styleClass="lead-text" wrapText="true"/>
+        <Region styleClass="divider"/>
+
+        <!-- Articles -->
+        <VBox fx:id="articleBody" spacing="12"/>
+
+        <!-- Videos and e-books -->
+        <VBox fx:id="linkBox" spacing="12">
+            <Label styleClass="muted" wrapText="true" text="This resource is hosted on another site and opens in your web browser."/>
+            <Label fx:id="urlLabel" styleClass="detail-value" wrapText="true"/>
+            <HBox spacing="10">
+                <Button fx:id="openButton" styleClass="btn-primary" text="Open in browser" onAction="#handleOpen"/>
+                <Button fx:id="copyButton" text="Copy link" onAction="#handleCopy"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</VBox>

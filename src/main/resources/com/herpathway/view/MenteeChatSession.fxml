@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Chat as seen by a mentee. Same layout and ids as ChatSession.fxml (mentor side). -->
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.MenteeChatSessionController">
+
+    <VBox styleClass="chat-sidebar" prefWidth="260" minWidth="240" spacing="8">
+        <padding><Insets top="22" right="12" bottom="12" left="12"/></padding>
+        <Label styleClass="section-title" text="My mentor">
+            <padding><Insets left="8"/></padding>
+        </Label>
+        <ListView fx:id="partnerList" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <StackPane HBox.hgrow="ALWAYS">
+        <!-- Shown until a conversation is selected -->
+        <VBox fx:id="emptyPane" styleClass="empty-state" alignment="CENTER" spacing="12">
+            <Label fx:id="emptyTitle" styleClass="empty-title" text="No conversation yet"/>
+            <Label fx:id="emptyMessage" styleClass="muted" wrapText="true" maxWidth="380"
+                   text="Once a mentor accepts your application, you can chat with them here."/>
+            <Button fx:id="emptyActionButton" styleClass="btn-primary" text="Find a mentor" onAction="#handleEmptyAction"/>
+        </VBox>
+
+        <VBox fx:id="conversationPane" visible="false">
+            <HBox styleClass="chat-header" alignment="CENTER_LEFT">
+                <StackPane fx:id="partnerAvatar"/>
+                <VBox>
+                    <Label fx:id="partnerNameLabel" styleClass="card-title"/>
+                    <Label fx:id="partnerRoleLabel" styleClass="muted, small" text="Your mentor"/>
+                </VBox>
+            </HBox>
+            <ScrollPane fx:id="messagesScroll" styleClass="chat-body" fitToWidth="true" VBox.vgrow="ALWAYS" hbarPolicy="NEVER">
+                <VBox fx:id="messagesBox" spacing="8">
+                    <padding><Insets top="18" right="20" bottom="18" left="20"/></padding>
+                </VBox>
+            </ScrollPane>
+            <HBox styleClass="chat-input-bar" alignment="CENTER">
+                <TextField fx:id="inputField" promptText="Write a message..." HBox.hgrow="ALWAYS" onAction="#handleSendButtonAction"/>
+                <Button styleClass="btn-primary" text="Send" onAction="#handleSendButtonAction"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</HBox>

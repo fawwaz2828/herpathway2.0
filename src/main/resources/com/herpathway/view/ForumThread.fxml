@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- One forum discussion with its replies. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ForumThreadController"
+      styleClass="page">
+
+    <HBox>
+        <Button styleClass="btn-ghost" text="&#8592;  All discussions" onAction="#handleBack"/>
+    </HBox>
+
+    <VBox styleClass="card" spacing="14" maxWidth="860">
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <StackPane fx:id="authorAvatar"/>
+            <VBox HBox.hgrow="ALWAYS" spacing="2">
+                <Label fx:id="authorLabel" styleClass="strong"/>
+                <Label fx:id="metaLabel" styleClass="muted, small"/>
+            </VBox>
+            <Label fx:id="categoryBadge" styleClass="badge, badge-muted"/>
+        </HBox>
+        <Label fx:id="titleLabel" styleClass="page-title" wrapText="true"/>
+        <Label fx:id="bodyLabel" styleClass="reading-text" wrapText="true"/>
+        <Region styleClass="divider"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button fx:id="likeButton" onAction="#handleLike"/>
+            <Label fx:id="replyCountLabel" styleClass="muted"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="deleteButton" styleClass="btn-danger" text="Delete discussion" onAction="#handleDelete"/>
+        </HBox>
+    </VBox>
+
+    <VBox fx:id="replyList" spacing="10" maxWidth="860"/>
+
+    <VBox styleClass="card" spacing="10" maxWidth="860">
+        <Label styleClass="section-title" text="Write a reply"/>
+        <TextArea fx:id="replyArea" promptText="Share your answer or experience..." wrapText="true" prefRowCount="3"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+            <Button styleClass="btn-primary" text="Post reply" onAction="#handleReply"/>
+        </HBox>
+    </VBox>
+</VBox>

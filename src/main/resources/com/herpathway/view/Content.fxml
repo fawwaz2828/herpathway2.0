@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Learning library: articles, videos and e-books. Cards are built in ContentController. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ContentController"
+      styleClass="page">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label styleClass="page-title" text="Learning"/>
+            <Label styleClass="page-subtitle" text="Articles, videos and books shared by mentors and partner organizations."/>
+        </VBox>
+        <Button fx:id="publishButton" styleClass="btn-primary" text="+  Publish content" onAction="#handlePublish"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <FlowPane fx:id="typeChips" hgap="8" vgap="8" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField" styleClass="search-field" promptText="Search the library..." prefWidth="260" minWidth="200"/>
+    </HBox>
+
+    <FlowPane fx:id="itemGrid" hgap="16" vgap="16"/>
+</VBox>

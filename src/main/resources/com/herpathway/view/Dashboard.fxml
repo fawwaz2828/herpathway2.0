@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Home dashboard. Its content depends on the role and is built in DashboardController. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.DashboardController"
+      styleClass="page">
+
+    <VBox spacing="4">
+        <Label fx:id="greetingLabel" styleClass="page-title"/>
+        <Label fx:id="subtitleLabel" styleClass="page-subtitle"/>
+    </VBox>
+
+    <HBox fx:id="statRow" spacing="16"/>
+
+    <VBox fx:id="sections" spacing="20"/>
+
+    <HBox spacing="20">
+        <VBox styleClass="card" spacing="6" HBox.hgrow="ALWAYS" prefWidth="100">
+            <HBox alignment="CENTER_LEFT">
+                <Label styleClass="section-title" text="Latest discussions" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Hyperlink text="Open forum" onAction="#handleOpenForum"/>
+            </HBox>
+            <VBox fx:id="discussionList"/>
+        </VBox>
+        <VBox styleClass="card" spacing="6" HBox.hgrow="ALWAYS" prefWidth="100">
+            <HBox alignment="CENTER_LEFT">
+                <Label styleClass="section-title" text="New in Learning" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <Hyperlink text="Open library" onAction="#handleOpenLearning"/>
+            </HBox>
+            <VBox fx:id="learningList"/>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,6 @@
+# Copy this file to db.properties (same folder) and fill in your MySQL credentials.
+# db.properties is git-ignored. Environment variables HERPATH_DB_URL / HERPATH_DB_USER /
+# HERPATH_DB_PASSWORD override these values.
+db.url=jdbc:mysql://localhost:3306/herpath
+db.user=root
+db.password=

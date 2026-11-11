@@ -1,1 +1,25 @@
-.vscode
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Local database credentials (see db.properties.example)
+db.properties
+
+# Files uploaded by users at runtime
+uploads/
+
+# Build output
+target/
+bin/
+*.class
+
+# JVM crash logs
+hs_err_pid*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Files set aside during cleanup; review, then delete
+_hapus/

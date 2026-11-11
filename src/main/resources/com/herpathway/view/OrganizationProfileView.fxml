@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Edit the organization's own profile (inside the sidebar shell). -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.OrganizationProfileController"
+      styleClass="page">
+    <VBox spacing="4">
+        <Label styleClass="page-title" text="Organization profile"/>
+        <Label styleClass="page-subtitle" text="Keep your organization's details up to date."/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="About"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Organization name"/>
+                <TextField fx:id="organizationNameField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Registration number"/>
+                <TextField fx:id="organizationRegistrationNumberField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Label styleClass="field-label" text="Description"/>
+                <TextField fx:id="descriptionField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Label styleClass="field-label" text="Vision and mission"/>
+                <TextField fx:id="visionMisionField"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Programs"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Services"/>
+                <TextField fx:id="serviceField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Target group"/>
+                <TextField fx:id="targetField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Methodology"/>
+                <TextField fx:id="methodologyField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Program outcomes"/>
+                <TextField fx:id="programOutcomesField"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Contact"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Contact person"/>
+                <TextField fx:id="contactField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Phone number"/>
+                <TextField fx:id="phoneNumberField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Email"/>
+                <TextField fx:id="emailField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Website"/>
+                <TextField fx:id="websiteField"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Label styleClass="field-label" text="Address"/>
+                <TextField fx:id="addressField"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+
+    <Label fx:id="messageLabel" styleClass="error-label" managed="false" visible="false"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button styleClass="btn-primary" text="Save changes" onAction="#handleSave"/>
+    </HBox>
+</VBox>

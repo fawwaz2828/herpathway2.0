@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.RegisterController"
+      prefWidth="1180" prefHeight="720">
+
+    <!-- Brand panel -->
+    <VBox styleClass="auth-brand" prefWidth="480" minWidth="420" spacing="18">
+        <ImageView fitHeight="34" preserveRatio="true">
+            <Image url="@../../../image/logoHitam.png"/>
+        </ImageView>
+        <Region VBox.vgrow="ALWAYS"/>
+        <StackPane>
+            <ImageView fitHeight="330" preserveRatio="true">
+                <Image url="@../../../image/weekday-young-woman-working-on-a-computer.png"/>
+            </ImageView>
+        </StackPane>
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label styleClass="auth-tagline" text="Join a community of women building careers in STEM."/>
+        <Label styleClass="muted" wrapText="true"
+               text="Sign up as a mentee to find guidance, as a mentor to share experience, or as an organization."/>
+    </VBox>
+
+    <!-- Form -->
+    <StackPane styleClass="auth-form" HBox.hgrow="ALWAYS">
+        <VBox maxWidth="400" spacing="12" alignment="CENTER_LEFT">
+            <Label styleClass="hero-title" text="Create your account"/>
+            <Label styleClass="page-subtitle" text="It only takes a minute."/>
+
+            <VBox spacing="6">
+                <VBox.margin><Insets top="8"/></VBox.margin>
+                <Label styleClass="field-label" text="Join as"/>
+                <ComboBox fx:id="userTypeComboBox" maxWidth="Infinity"/>
+            </VBox>
+
+            <HBox spacing="12">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label styleClass="field-label" text="Username"/>
+                    <TextField fx:id="usernameField" promptText="Choose a username"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label styleClass="field-label" text="Email"/>
+                    <TextField fx:id="emailField" promptText="you@example.com"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Password"/>
+                <StackPane>
+                    <PasswordField fx:id="passwordField" promptText="At least 8 characters"/>
+                    <TextField fx:id="passwordTextField" promptText="At least 8 characters" managed="false" visible="false"/>
+                </StackPane>
+            </VBox>
+
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Confirm password"/>
+                <StackPane>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Repeat your password"/>
+                    <TextField fx:id="confirmPasswordTextField" promptText="Repeat your password" managed="false" visible="false"/>
+                </StackPane>
+                <CheckBox fx:id="showPasswordToggle" text="Show password" onAction="#handleShowPasswordAction"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" managed="false" visible="false"/>
+
+            <Button text="Create account" styleClass="btn-primary, btn-block" maxWidth="Infinity"
+                    defaultButton="true" onAction="#handleRegisterButtonAction"/>
+
+            <HBox alignment="CENTER" spacing="4">
+                <Label styleClass="muted" text="Already have an account?"/>
+                <Hyperlink text="Log in" onAction="#handleBackToLoginLinkAction"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</HBox>

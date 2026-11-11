@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Mentee: browse and search mentors. Cards are built in MentorMenuController. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.MentorMenuController"
+      styleClass="page">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label styleClass="page-title" text="Find your mentor"/>
+            <Label styleClass="page-subtitle" text="Browse women working in STEM and apply to the one who fits your goals."/>
+        </VBox>
+        <TextField fx:id="searchField" styleClass="search-field" promptText="Search name, field, company..." prefWidth="280"/>
+    </HBox>
+
+    <Label fx:id="resultCountLabel" styleClass="muted"/>
+
+    <FlowPane fx:id="mentorGrid" hgap="16" vgap="16"/>
+</VBox>

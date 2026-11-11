@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Edit own profile (inside the sidebar shell). -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.UserProfileController"
+      styleClass="page">
+    <VBox spacing="4">
+        <Label styleClass="page-title" text="My profile"/>
+        <Label styleClass="page-subtitle" text="Keep your details up to date so mentors know where you are."/>
+    </VBox>
+    <HBox styleClass="card" spacing="18" alignment="CENTER_LEFT">
+        <ImageView fx:id="profileImageView" fitWidth="72" fitHeight="72"/>
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label fx:id="nameHeaderLabel" styleClass="section-title"/>
+            <Label styleClass="muted, small" text="PNG or JPG. Saved as soon as you pick it."/>
+        </VBox>
+        <Button styleClass="btn-secondary" text="Change photo" onAction="#handleProfilePictureChangeAction"/>
+    </HBox>
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Personal info"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Display name"/>
+                <TextField fx:id="displayNameField" promptText="How others see you"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Full name"/>
+                <TextField fx:id="realNameField" promptText=""/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Email"/>
+                <TextField fx:id="emailField" promptText="you@example.com"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Phone number"/>
+                <TextField fx:id="phoneNumberField" promptText="+62..."/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Label styleClass="field-label" text="Address"/>
+                <TextField fx:id="addressField" promptText="City, country"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Instagram"/>
+                <TextField fx:id="instagramField" promptText="\@username"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="LinkedIn"/>
+                <TextField fx:id="linkedInField" promptText="linkedin.com/in/..."/>
+            </VBox>
+        </GridPane>
+    </VBox>
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Education"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Education level"/>
+                <TextField fx:id="lastEducationLevelField" promptText="e.g. Bachelor's"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Institution"/>
+                <TextField fx:id="educationalInstitutionField" promptText="University name"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Field of study"/>
+                <TextField fx:id="fieldOfStudyField" promptText="e.g. Computer Science"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Graduation year"/>
+                <TextField fx:id="graduationYearField" promptText="e.g. 2024"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Career"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Current job"/>
+                <TextField fx:id="currentJobField" promptText="e.g. Software Engineer"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Company"/>
+                <TextField fx:id="companyNameField" promptText=""/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Position"/>
+                <TextField fx:id="positionField" promptText="e.g. Junior, Lead"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Work experience"/>
+                <TextField fx:id="workExperienceField" promptText="e.g. 3 years in backend"/>
+            </VBox>
+        </GridPane>
+    </VBox>
+    <VBox styleClass="card" spacing="14">
+        <Label styleClass="section-title" text="Mentoring goals"/>
+        <GridPane hgap="16" vgap="14">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                <Label styleClass="field-label" text="Main goal"/>
+                <TextField fx:id="mainGoalField" promptText="What do you want to achieve?"/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                <Label styleClass="field-label" text="Field you want to grow in"/>
+                <TextField fx:id="fieldOfStudyGoalField" promptText=""/>
+            </VBox>
+            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                <Label styleClass="field-label" text="Expectations from a mentor"/>
+                <TextField fx:id="expectationsField" promptText=""/>
+            </VBox>
+        </GridPane>
+    </VBox>
+    <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button styleClass="btn-primary" text="Save changes" onAction="#handleSubmitButtonAction"/>
+    </HBox>
+</VBox>

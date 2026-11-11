@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Forum: list of discussions with category filter and search. Rows are built in ForumController. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ForumController"
+      styleClass="page">
+
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label styleClass="page-title" text="Forum"/>
+            <Label styleClass="page-subtitle" text="Ask questions, share what you know and learn from the community."/>
+        </VBox>
+        <Button styleClass="btn-primary" text="+  New discussion" onAction="#handleNewThread"/>
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="12">
+        <FlowPane fx:id="categoryChips" hgap="8" vgap="8" HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField" styleClass="search-field" promptText="Search discussions..." prefWidth="260" minWidth="200"/>
+    </HBox>
+
+    <VBox fx:id="threadList" spacing="12"/>
+</VBox>

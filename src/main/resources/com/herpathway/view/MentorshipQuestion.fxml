@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Mentee's application to the mentor chosen on the profile page. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.MentorshipQuestionController"
+      styleClass="page">
+
+    <Button styleClass="btn-ghost" text="&#8592;  Back to profile" onAction="#handleBackButtonAction"/>
+
+    <VBox spacing="4">
+        <Label fx:id="titleLabel" styleClass="page-title" text="Apply for mentorship"/>
+        <Label styleClass="page-subtitle" text="Tell your mentor a bit about yourself so they can decide how to help."/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="22" maxWidth="760">
+        <VBox spacing="10">
+            <Label styleClass="section-title" text="1. How experienced are you in your field?"/>
+            <FlowPane hgap="8" vgap="8">
+                <RadioButton fx:id="veryExperiencedRadioButton" styleClass="choice-pill" text="Very experienced"/>
+                <RadioButton fx:id="experiencedRadioButton" styleClass="choice-pill" text="Experienced"/>
+                <RadioButton fx:id="neutralRadioButton" styleClass="choice-pill" text="Neutral"/>
+                <RadioButton fx:id="inexperiencedRadioButton" styleClass="choice-pill" text="Inexperienced"/>
+                <RadioButton fx:id="veryInexperiencedRadioButton" styleClass="choice-pill" text="Very inexperienced"/>
+            </FlowPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label styleClass="section-title" text="2. What do you want from mentoring?"/>
+            <Label styleClass="muted, small" text="Pick one or more."/>
+            <FlowPane hgap="8" vgap="8">
+                <CheckBox fx:id="networkingCheckBox" styleClass="choice-pill" text="Networking opportunities"/>
+                <CheckBox fx:id="learningSkillsCheckBox" styleClass="choice-pill" text="Learning new skills"/>
+                <CheckBox fx:id="careerAdviceCheckBox" styleClass="choice-pill" text="Career advice"/>
+                <CheckBox fx:id="personalDevelopmentCheckBox" styleClass="choice-pill" text="Personal development"/>
+            </FlowPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label styleClass="section-title" text="3. Tell us about your background"/>
+            <TextArea fx:id="suggestionsTextArea" wrapText="true" prefRowCount="5"
+                      promptText="Your studies, what you're working on, and what you hope to get out of mentoring."/>
+        </VBox>
+
+        <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Cancel" onAction="#handleMentorMenuButtonAction"/>
+            <Button styleClass="btn-primary" text="Send application" onAction="#handleSubmitButtonAction"/>
+        </HBox>
+    </VBox>
+</VBox>

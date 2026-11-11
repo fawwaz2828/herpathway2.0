@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- First-login onboarding form for organizations (full window). -->
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.herpathway.controller.OrganizationDataController"
+            prefWidth="1180" prefHeight="720">
+    <top>
+        <HBox alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding><Insets top="16" right="32" bottom="16" left="32"/></padding>
+            <ImageView fitHeight="28" preserveRatio="true"><Image url="@../../../image/logoHitam.png"/></ImageView>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label styleClass="muted" text="One last step: complete your profile"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll">
+            <StackPane>
+                <VBox styleClass="page" maxWidth="860">
+                    <VBox spacing="4">
+                        <Label styleClass="page-title" text="Tell us about your organization"/>
+                        <Label styleClass="page-subtitle" text="We use this to verify your organization before it appears to mentees."/>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="14">
+                        <Label styleClass="section-title" text="Organization"/>
+                        <GridPane hgap="16" vgap="14">
+                            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                <Label styleClass="field-label" text="Organization name"/>
+                                <TextField fx:id="organizationNameField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                                <Label styleClass="field-label" text="Registration number"/>
+                                <TextField fx:id="organizationRegistrationNumberField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <Label styleClass="field-label" text="Description"/>
+                                <TextField fx:id="descriptionField" promptText="What does your organization do?"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <Label styleClass="field-label" text="Vision &amp; mission"/>
+                                <TextField fx:id="visionMisionField"/>
+                            </VBox>
+                        </GridPane>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="14">
+                        <Label styleClass="section-title" text="Programs"/>
+                        <GridPane hgap="16" vgap="14">
+                            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                <Label styleClass="field-label" text="Services"/>
+                                <TextField fx:id="serviceField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                                <Label styleClass="field-label" text="Target audience"/>
+                                <TextField fx:id="targetField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                                <Label styleClass="field-label" text="Methodology"/>
+                                <TextField fx:id="methodologyField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                                <Label styleClass="field-label" text="Program outcomes"/>
+                                <TextField fx:id="programOutcomesField"/>
+                            </VBox>
+                        </GridPane>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="14">
+                        <Label styleClass="section-title" text="Contact"/>
+                        <GridPane hgap="16" vgap="14">
+                            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="0">
+                                <Label styleClass="field-label" text="Contact person"/>
+                                <TextField fx:id="contactField"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                                <Label styleClass="field-label" text="Phone number"/>
+                                <TextField fx:id="phoneNumberField" promptText="+62..."/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="0">
+                                <Label styleClass="field-label" text="Email"/>
+                                <TextField fx:id="emailField" promptText="contact@organization.org"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                                <Label styleClass="field-label" text="Website"/>
+                                <TextField fx:id="websiteField" promptText="https://"/>
+                            </VBox>
+                            <VBox spacing="6" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                                <Label styleClass="field-label" text="Address"/>
+                                <TextField fx:id="addressField"/>
+                            </VBox>
+                        </GridPane>
+                    </VBox>
+
+                    <VBox styleClass="card" spacing="14">
+                        <Label styleClass="section-title" text="Documents"/>
+                        <Label styleClass="muted, small" text="PDF or image."/>
+                        <GridPane hgap="16" vgap="12">
+                            <columnConstraints><ColumnConstraints minWidth="150"/><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints/></columnConstraints>
+                            <Label styleClass="field-label" text="Founding documents" GridPane.rowIndex="0"/>
+                            <Label fx:id="foundingDocumentNameLabel" styleClass="file-name" text="No file chosen" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            <Button styleClass="btn-secondary" text="Choose file" onAction="#handleFoundingDocumentsAction" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                            <Label styleClass="field-label" text="Financial reports" GridPane.rowIndex="1"/>
+                            <Label fx:id="financialReportNameLabel" styleClass="file-name" text="No file chosen" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            <Button styleClass="btn-secondary" text="Choose file" onAction="#handleFinancialReportsAction" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                        </GridPane>
+                    </VBox>
+
+                    <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button text="Clear" onAction="#handleClearAllButtonAction"/>
+                        <Button styleClass="btn-primary" text="Save and continue" onAction="#handleSubmitButtonAction"/>
+                    </HBox>
+                </VBox>
+            </StackPane>
+        </ScrollPane>
+    </center>
+</BorderPane>

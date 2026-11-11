@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- A mentor's public profile, as seen by a mentee. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ProfilMentorController"
+      styleClass="page">
+
+    <Button fx:id="backButton" styleClass="btn-ghost" text="&#8592;  All mentors" onAction="#handleBackButtonAction"/>
+
+    <!-- Header card -->
+    <HBox styleClass="card" spacing="22" alignment="CENTER_LEFT">
+        <ImageView fx:id="profilePictureView" fitWidth="112" fitHeight="112"/>
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label fx:id="displayNameLabel" styleClass="page-title"/>
+            <Label fx:id="currentJobLabel" styleClass="lead-text"/>
+            <Label fx:id="companyNameLabel" styleClass="muted"/>
+            <FlowPane hgap="6" vgap="6">
+                <Label fx:id="fieldOfStudyLabel" styleClass="badge"/>
+                <Label fx:id="lastEducationLevelLabel" styleClass="badge, badge-muted"/>
+            </FlowPane>
+        </VBox>
+        <VBox spacing="8" alignment="CENTER_RIGHT">
+            <Button fx:id="mentorshipQuestionButton" styleClass="btn-primary" text="Apply for mentorship"
+                    onAction="#handleMentorshipQuestionButtonAction"/>
+            <Label fx:id="applyHintLabel" styleClass="muted, small" wrapText="true" maxWidth="200"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20">
+        <!-- Education -->
+        <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS" prefWidth="100">
+            <Label styleClass="section-title" text="Education"/>
+            <GridPane hgap="16" vgap="10">
+                <columnConstraints><ColumnConstraints minWidth="110"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+                <Label styleClass="detail-key" text="Institution" GridPane.rowIndex="0"/>
+                <Label fx:id="institutionLabel" styleClass="detail-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="Field of study" GridPane.rowIndex="1"/>
+                <Label fx:id="fieldDetailLabel" styleClass="detail-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="Level" GridPane.rowIndex="2"/>
+                <Label fx:id="educationDetailLabel" styleClass="detail-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="Graduated" GridPane.rowIndex="3"/>
+                <Label fx:id="graduationLabel" styleClass="detail-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+
+        <!-- Career -->
+        <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS" prefWidth="100">
+            <Label styleClass="section-title" text="Career"/>
+            <GridPane hgap="16" vgap="10">
+                <columnConstraints><ColumnConstraints minWidth="110"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+                <Label styleClass="detail-key" text="Position" GridPane.rowIndex="0"/>
+                <Label fx:id="positionLabel" styleClass="detail-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="Company" GridPane.rowIndex="1"/>
+                <Label fx:id="companyDetailLabel" styleClass="detail-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="Experience" GridPane.rowIndex="2"/>
+                <Label fx:id="experienceLabel" styleClass="detail-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label styleClass="detail-key" text="LinkedIn" GridPane.rowIndex="3"/>
+                <Label fx:id="linkedInLabel" styleClass="detail-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+    </HBox>
+</VBox>

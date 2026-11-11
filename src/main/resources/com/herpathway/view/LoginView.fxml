@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.LoginController"
+      prefWidth="1180" prefHeight="720">
+
+    <!-- Brand panel -->
+    <VBox styleClass="auth-brand" prefWidth="480" minWidth="420" spacing="18">
+        <ImageView fitHeight="34" preserveRatio="true">
+            <Image url="@../../../image/logoHitam.png"/>
+        </ImageView>
+        <Region VBox.vgrow="ALWAYS"/>
+        <StackPane>
+            <ImageView fitHeight="330" preserveRatio="true">
+                <Image url="@../../../image/Young%20woman%20writing%20on%20the%20whiteboard.png"/>
+            </ImageView>
+        </StackPane>
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label styleClass="auth-tagline" text="Grow your career in STEM with a mentor who has been there."/>
+        <Label styleClass="muted" wrapText="true"
+               text="Find mentors, join discussions and learn from curated content, all in one place."/>
+    </VBox>
+
+    <!-- Form -->
+    <StackPane styleClass="auth-form" HBox.hgrow="ALWAYS">
+        <VBox maxWidth="380" spacing="14" alignment="CENTER_LEFT">
+            <Label styleClass="hero-title" text="Welcome back"/>
+            <Label styleClass="page-subtitle" text="Log in to continue your journey."/>
+
+            <VBox spacing="6">
+                <VBox.margin><Insets top="14"/></VBox.margin>
+                <Label styleClass="field-label" text="Username"/>
+                <TextField fx:id="usernameField" promptText="Your username"/>
+            </VBox>
+
+            <VBox spacing="6">
+                <Label styleClass="field-label" text="Password"/>
+                <StackPane>
+                    <PasswordField fx:id="passwordField" promptText="Your password"/>
+                    <TextField fx:id="passwordTextField" promptText="Your password"/>
+                </StackPane>
+                <CheckBox fx:id="showPasswordToggle" text="Show password"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="error-label" wrapText="true" managed="false" visible="false"/>
+
+            <Button text="Log in" styleClass="btn-primary, btn-block" maxWidth="Infinity"
+                    defaultButton="true" onAction="#handleLoginButtonAction"/>
+
+            <HBox alignment="CENTER" spacing="4">
+                <Label styleClass="muted" text="Don't have an account?"/>
+                <Hyperlink text="Create one" onAction="#handleRegisterLinkAction"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</HBox>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Publish an article, or share a link to a video / e-book (mentors and organizations). -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.herpathway.controller.ContentEditorController"
+      styleClass="page">
+
+    <HBox>
+        <Button styleClass="btn-ghost" text="&#8592;  Learning" onAction="#handleCancel"/>
+    </HBox>
+
+    <VBox spacing="4">
+        <Label styleClass="page-title" text="Publish content"/>
+        <Label styleClass="page-subtitle" text="Write an article, or share a video or book you recommend."/>
+    </VBox>
+
+    <VBox styleClass="card" spacing="16" maxWidth="860">
+        <VBox spacing="8">
+            <Label styleClass="field-label" text="Type"/>
+            <HBox fx:id="typeChips" spacing="8"/>
+        </VBox>
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Title"/>
+            <TextField fx:id="titleField" promptText="A clear, specific title"/>
+        </VBox>
+        <VBox spacing="6">
+            <Label styleClass="field-label" text="Summary"/>
+            <TextField fx:id="summaryField" promptText="One or two sentences shown on the library card"/>
+        </VBox>
+        <VBox fx:id="bodyBox" spacing="6">
+            <Label styleClass="field-label" text="Article"/>
+            <TextArea fx:id="bodyArea" wrapText="true" prefRowCount="12"
+                      promptText="Write your article. Leave a blank line between paragraphs; a short line on its own before a paragraph becomes a sub-heading."/>
+        </VBox>
+        <VBox fx:id="urlBox" spacing="6">
+            <Label styleClass="field-label" text="Link"/>
+            <TextField fx:id="urlField" promptText="https://..."/>
+            <Label styleClass="muted, small" text="Share only resources that are free to access or that you have the right to share."/>
+        </VBox>
+        <Label fx:id="errorLabel" styleClass="error-label" managed="false" visible="false"/>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Cancel" onAction="#handleCancel"/>
+            <Button styleClass="btn-primary" text="Publish" onAction="#handlePublish"/>
+        </HBox>
+    </VBox>
+</VBox>

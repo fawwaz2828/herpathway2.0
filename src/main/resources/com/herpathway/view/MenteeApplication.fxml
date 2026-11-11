@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Popup where a mentor reviews and accepts a mentee's application. -->
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.herpathway.controller.MenteeApplicationController"
+            prefWidth="720" prefHeight="640">
+    <top>
+        <HBox styleClass="dialog-header" spacing="18" alignment="CENTER_LEFT">
+            <ImageView fx:id="profileImage" fitWidth="72" fitHeight="72"/>
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label fx:id="displayNameLabel" styleClass="page-title"/>
+                <Label fx:id="realNameLabel" styleClass="muted"/>
+                <FlowPane hgap="6" vgap="6">
+                    <Label fx:id="experienceBadge" styleClass="badge, badge-muted"/>
+                    <Label fx:id="statusBadge" styleClass="badge"/>
+                </FlowPane>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="content-scroll">
+            <VBox spacing="16">
+                <padding><Insets top="18" right="22" bottom="18" left="22"/></padding>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label styleClass="section-title" text="Application"/>
+                    <Label styleClass="detail-key" text="Wants help with"/>
+                    <Label fx:id="aspectsLabel" styleClass="detail-value"/>
+                    <Label styleClass="detail-key" text="Background"/>
+                    <Label fx:id="backgroundLabel" styleClass="detail-value"/>
+                </VBox>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label styleClass="section-title" text="Goals"/>
+                    <GridPane hgap="16" vgap="10">
+                        <columnConstraints><ColumnConstraints minWidth="140"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+                        <Label styleClass="detail-key" text="Main goal" GridPane.rowIndex="0"/>
+                        <Label fx:id="mainGoalLabel" styleClass="detail-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Field to grow in" GridPane.rowIndex="1"/>
+                        <Label fx:id="fieldOfStudyGoalLabel" styleClass="detail-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Expectations" GridPane.rowIndex="2"/>
+                        <Label fx:id="expectationsLabel" styleClass="detail-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label styleClass="section-title" text="Education &amp; career"/>
+                    <GridPane hgap="16" vgap="10">
+                        <columnConstraints><ColumnConstraints minWidth="140"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+                        <Label styleClass="detail-key" text="Education" GridPane.rowIndex="0"/>
+                        <Label fx:id="lastEducationLevelLabel" styleClass="detail-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Institution" GridPane.rowIndex="1"/>
+                        <Label fx:id="educationalInstitutionLabel" styleClass="detail-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Field of study" GridPane.rowIndex="2"/>
+                        <Label fx:id="fieldOfStudyLabel" styleClass="detail-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Graduation year" GridPane.rowIndex="3"/>
+                        <Label fx:id="graduationYearLabel" styleClass="detail-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Current job" GridPane.rowIndex="4"/>
+                        <Label fx:id="currentJobLabel" styleClass="detail-value" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Company" GridPane.rowIndex="5"/>
+                        <Label fx:id="companyNameLabel" styleClass="detail-value" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Position" GridPane.rowIndex="6"/>
+                        <Label fx:id="positionLabel" styleClass="detail-value" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Work experience" GridPane.rowIndex="7"/>
+                        <Label fx:id="workExperienceLabel" styleClass="detail-value" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+
+                <VBox styleClass="card" spacing="10">
+                    <Label styleClass="section-title" text="Contact"/>
+                    <GridPane hgap="16" vgap="10">
+                        <columnConstraints><ColumnConstraints minWidth="140"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+                        <Label styleClass="detail-key" text="Email" GridPane.rowIndex="0"/>
+                        <Label fx:id="emailLabel" styleClass="detail-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Phone" GridPane.rowIndex="1"/>
+                        <Label fx:id="phoneNumberLabel" styleClass="detail-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Address" GridPane.rowIndex="2"/>
+                        <Label fx:id="addressLabel" styleClass="detail-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="Instagram" GridPane.rowIndex="3"/>
+                        <Label fx:id="instagramLabel" styleClass="detail-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        <Label styleClass="detail-key" text="LinkedIn" GridPane.rowIndex="4"/>
+                        <Label fx:id="linkedInLabel" styleClass="detail-value" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="dialog-footer">
+            <padding><Insets top="14" right="22" bottom="14" left="22"/></padding>
+            <Button text="Close" onAction="#handleCloseButtonAction"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="declineButton" styleClass="btn-danger" text="Decline" onAction="#handleDeclineButtonAction"/>
+            <Button fx:id="acceptButton" styleClass="btn-primary" text="Accept mentee" onAction="#handleAcceptButtonAction"/>
+        </HBox>
+    </bottom>
+</BorderPane>

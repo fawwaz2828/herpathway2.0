@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- App shell for every role: sidebar + content area. The menu is built in ShellController. -->
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.herpathway.controller.ShellController"
+            prefWidth="1180" prefHeight="720">
+    <left>
+        <VBox styleClass="sidebar" prefWidth="240" minWidth="240">
+            <HBox styleClass="sidebar-brand" alignment="CENTER_LEFT">
+                <ImageView fitHeight="26" preserveRatio="true">
+                    <Image url="@../../../image/logoHitam.png"/>
+                </ImageView>
+            </HBox>
+
+            <Label styleClass="nav-section" text="MENU"/>
+            <VBox fx:id="mainNav" spacing="2"/>
+            <Label styleClass="nav-section" text="ACCOUNT"/>
+            <VBox fx:id="accountNav" spacing="2"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <HBox styleClass="user-chip" alignment="CENTER_LEFT">
+                <StackPane fx:id="avatarHolder" minWidth="36" minHeight="36"/>
+                <VBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT" minWidth="0">
+                    <Label fx:id="profileNameLabel" styleClass="user-chip-name" text="-"/>
+                    <Label fx:id="roleLabel" styleClass="user-chip-role"/>
+                </VBox>
+            </HBox>
+            <Button fx:id="logoutButton" styleClass="nav-button, logout-button" text="Log out" maxWidth="Infinity"
+                    onAction="#handleLogoutButtonAction"/>
+        </VBox>
+    </left>
+    <center>
+        <ScrollPane styleClass="content-scroll" fitToWidth="true" fitToHeight="true" hbarPolicy="AS_NEEDED">
+            <VBox fx:id="contentArea"/>
+        </ScrollPane>
+    </center>
+</BorderPane>
